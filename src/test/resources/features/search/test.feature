@@ -2,10 +2,8 @@ Feature: Login
 
   Scenario Outline: Successful login with valid credentials
     Given the user is on the login page
-    When the user enters valid credentials "<email>","<password>"
+    When the user enters valid credentials "<userType>""<email>","<password>" and validate the otp
 
     Examples:
-      | email            | password  |
-      |rock2@mailsac.com | Admin@123 |
-      |rock1@mailsac.com | Admin@123 |
-      |rock1@mailsac.com | Admin@123 |
+      | email            | password  | userType   |
+      |rock2@mailsac.com | Admin@123 | Individual |
