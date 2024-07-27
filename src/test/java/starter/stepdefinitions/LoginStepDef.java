@@ -3,7 +3,6 @@ package starter.stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
-import starter.navigation.NavigateTo;
 import starter.steps.LoginSteps;
 
 public class LoginStepDef {
