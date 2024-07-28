@@ -6,4 +6,6 @@ Feature: Login
 
     Examples:
       | email            | password  | userType   |
-      |rock2@mailsac.com | Admin@123 | Individual |
+      |rock1@mailsac.com | Admin@123 | Business   |
+
+
