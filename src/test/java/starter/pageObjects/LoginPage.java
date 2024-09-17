@@ -87,5 +87,6 @@ public class LoginPage extends PageObject {
     public void clickConfirmOTP() {
         $(confirmOtpButton).click();
         waitABit(5000);
+        //commit
     }
 }
