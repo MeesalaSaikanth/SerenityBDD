@@ -15,8 +15,9 @@ public class LoginStepDef {
         loginSteps.login();
     }
 
-    @When("the user enters valid credentials {string},{string}")
-    public void theUserEntersValidCredentials(String arg0, String arg1) {
-        loginSteps.theUserEntersValidCredentials(arg0,arg1);
+
+    @When("the user enters valid credentials {string}{string},{string} and validate the otp")
+    public void theUserEntersValidCredentialsAndValidateTheOtp(String arg0, String arg1, String arg2) throws InterruptedException {
+        loginSteps.theUserEntersValidCredentials(arg0,arg1,arg2);
     }
 }
