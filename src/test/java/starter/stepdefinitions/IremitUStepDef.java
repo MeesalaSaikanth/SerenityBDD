@@ -32,11 +32,6 @@ public class IremitUStepDef {
     int amount = Integer.parseInt(enterAmount); // Convert from String to int
     IremitUSteps.SendMoney(amount, country, paymentType, SelfOrOnbehalf);
     }
-//    @Then("Add_Benificiary {string}, {string}, {string}, {string}, {string}, Last Name {string}, Relation {string}, Phone number {string}, {string}, and Address {string}")
-//    public void add_benificiary(String SelfOrBuss, String BankName, String AccountNumbers, String BranchCode, String FirstName, String LastName, String Relation, String PhoneNumber, String Email, String Address) {
-//        // Call the method from your page object class to add the beneficiary
-//        IremitUSteps.Add_Benificiary(SelfOrBuss, BankName, BranchCode, AccountNumbers, FirstName, LastName, Relation, PhoneNumber, Email, Address);
-//    }
 @Then("Add_Benificiary {string}, {string}, {string}, {string}, {string}, Last Name {string}, Relation {string}, Phone number {string}, {string}, and Address {string}")
 public void add_benificiary(String SelfOrBuss, String BankName, String Branchcode, String Accountnumber, String FirstName, String LastName, String Relation, String PhoneNumber, String Email, String Address) {
     // Call the method from your page object class to add the beneficiary
