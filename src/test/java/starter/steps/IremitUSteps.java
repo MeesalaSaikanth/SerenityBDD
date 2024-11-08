@@ -29,8 +29,11 @@ public class IremitUSteps {
         iremitu.SendMoney (enterAmount, country, paymentType, SelfOrOnbehalf);
     }
     @Step
-    public void Add_Benificiary(String SelfOrBuss,String BankName,int Accountnumber,String Branchcode){
-        iremitu.Add_Benificiary (SelfOrBuss, BankName, Accountnumber, Branchcode);
+    public void Add_Benificiary(String SelfOrBuss, String BankName, String Branchcode, String Accountnumber,
+                                String Firstname, String Lastname, String Relation, String Phonenumber,
+                                String benificiaryemail, String address) {
+        iremitu.Add_Benificiary(SelfOrBuss, BankName, Branchcode, Accountnumber, Firstname, Lastname,
+                Relation, Phonenumber, benificiaryemail, address);
     }
 
 

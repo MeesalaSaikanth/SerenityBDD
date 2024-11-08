@@ -48,29 +48,55 @@ public class IremitU extends PageObject {
     public WebElementFacade signInBtn;
 
     @FindBy(xpath = "//a[@href='/beneficiarysummary' and contains(@class, 'v-btn--outlined') and .//span[text()='view More']]")
-    public WebElementFacade BenificiaryClick;
+    public WebElementFacade BeneficiaryClick;
 
     @FindBy(xpath = "//button[@type='button' and contains(@class, 'v-btn--has-bg') and .//span[text()=' Add Beneficiary ']]")
-    public WebElementFacade AddBenificiary;
+    public WebElementFacade AddBeneficiary;
 
     @FindBy(xpath = "//p[contains(@class, 'bg-primary-col') and text()=' Personal ']")
     public WebElementFacade PersonalField;
+
     @FindBy(xpath = "//p[contains(@class, 'bg-secondary') and text()=' Business ']")
     public WebElementFacade BusinessField;
+
     @FindBy(xpath = "//span[@class='v-btn__content' and text()=' Next '][1]")
     public WebElementFacade NextBtn1;
 
-
     @FindBy(xpath = "//input[@placeholder='Bank Name']")
     public WebElementFacade SelectBank;
-    @FindBy(xpath = "//div[@class='v-list-item__title' and text()='Axis Bank']")
-    public WebElementFacade Bankname;
+
     @FindBy(xpath = "//input[@placeholder='Branch Code']")
-    public WebElementFacade BranchCode ;
+    public WebElementFacade BranchCode;
+
     @FindBy(xpath = "//input[@placeholder='Account Number']")
     public WebElementFacade AccountNumber;
-    @FindBy(xpath = "//span[@class='v-btn__content' and text()=' Next ']")
+
+    @FindBy(xpath = "/html/body/div/div[1]/div[1]/div/main/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/div[6]/button[2]")
     public WebElementFacade NextBtn2;
+
+    @FindBy(xpath = "//input[@placeholder='First Name']")
+    public WebElementFacade FirstName;
+
+    @FindBy(xpath = "//input[@placeholder='Last Name']")
+    public WebElementFacade LastName;
+
+    @FindBy(xpath = "//input[@placeholder='Select Relation']")
+    public WebElementFacade RelationField;
+
+    @FindBy(xpath = "//input[@class='input-tel__input']")
+    public WebElementFacade PhoneNumber;
+
+    @FindBy(xpath = "//input[@placeholder='E-mail']")
+    public WebElementFacade Email;
+
+    @FindBy(xpath = "//input[@placeholder='Enter Address']")
+    public WebElementFacade Address;
+
+    @FindBy(xpath = "/html/body/div/div[1]/div[1]/div/main/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div[8]/button[2]/span")
+    public WebElementFacade NextBtn3;
+
+    @FindBy(xpath = "//div[text()='Submit']")
+    public WebElementFacade SubmitBtn;
 
     @FindBy(xpath = "//li[contains(text(), 'Send Money')]")
     public WebElementFacade SendMoney;
@@ -180,24 +206,35 @@ public class IremitU extends PageObject {
         $(NextButton).click();
         Thread.sleep(1000);
     }
+    private String bankName;
+    private String RelationOption;
+    public void Add_Benificiary(String SelfOrBuss, String BankName, String Branchcode, String Accountnumber, String Firstname, String Lastname, String Relation, String Phonenumber, String benificiaryemail, String address) {
+        this.RelationOption=Relation;
+        this.bankName=BankName;
+        $(BeneficiaryClick).click();
+        $(AddBeneficiary).click();
 
-    public void Add_Benificiary(String SelfOrBuss,String BankName,int Accountnumber,String Branchcode){
-        $(BenificiaryClick).click();
-        $(AddBenificiary).click();
-        if ((SelfOrBuss).equals("Personal")) {
+        // Select Personal or Business
+        if (SelfOrBuss.equals("Personal")) {
             $(PersonalField).click();
-        }else{
+        } else {
             $(BusinessField).click();
         }
         $(NextBtn1).click();
-        $(SelectBank).click();
-        $(Bankname).sendKeys(BankName);
-        $(AccountNumber).sendKeys(String.valueOf(Accountnumber));
+       (SelectBank).click();
+        $(By.xpath("//div[@class='v-list-item__title' and text()='"+ bankName + "']")).click();
+        $(AccountNumber).sendKeys(Accountnumber);
         $(BranchCode).sendKeys(Branchcode);
         $(NextBtn2).click();
-
+        $(FirstName).sendKeys(Firstname);
+        $(LastName).sendKeys(Lastname);
+        $(RelationField).click();
+        $(By.xpath("//div[@class='v-list-item__title' and contains(.,'"+Relation+"')]")).click();
+        $(PhoneNumber).sendKeys(Phonenumber);
+        $(Email).sendKeys(benificiaryemail);
+        $(Address).sendKeys(address);
+        $(NextBtn3).click();
+        $(SubmitBtn).click();
     }
-    //Demo
-//test
-//giving data to branch
+
 }
