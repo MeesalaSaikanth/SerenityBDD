@@ -26,17 +26,15 @@ public class IremitUStepDef {
     public void OtpEntering()throws InterruptedException{
         IremitUSteps.OtpEntering();
     }
+    @Then("Add_Benificiary {string}, {string}, {string}, {string}, {string}, Last Name {string}, Relation {string}, Phone number {string}, {string}, and Address {string}")
+    public void add_benificiary(String SelfOrBuss, String BankName, String Branchcode, String Accountnumber, String FirstName, String LastName, String Relation, String PhoneNumber, String Email, String Address) {
+    IremitUSteps.Add_Benificiary(SelfOrBuss, BankName, Branchcode, Accountnumber, FirstName, LastName, Relation, PhoneNumber, Email, Address);
+    }
     @Then("SendMoney {string}, {string}, {string}, {string}")
     public void sendMoney(String enterAmount, String country, String paymentType, String SelfOrOnbehalf) throws InterruptedException{
-    // Convert the enterAmount to an integer
-    int amount = Integer.parseInt(enterAmount); // Convert from String to int
-    IremitUSteps.SendMoney(amount, country, paymentType, SelfOrOnbehalf);
+        int amount = Integer.parseInt(enterAmount);// Convert from String to int
+        IremitUSteps.SendMoney(amount, country, paymentType, SelfOrOnbehalf);
     }
-@Then("Add_Benificiary {string}, {string}, {string}, {string}, {string}, Last Name {string}, Relation {string}, Phone number {string}, {string}, and Address {string}")
-public void add_benificiary(String SelfOrBuss, String BankName, String Branchcode, String Accountnumber, String FirstName, String LastName, String Relation, String PhoneNumber, String Email, String Address) {
-    // Call the method from your page object class to add the beneficiary
-    IremitUSteps.Add_Benificiary(SelfOrBuss, BankName, Branchcode, Accountnumber, FirstName, LastName, Relation, PhoneNumber, Email, Address);
-}
 
 
 
