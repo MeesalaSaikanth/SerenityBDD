@@ -1,14 +1,10 @@
 package starter.steps;
 
 import net.serenitybdd.annotations.Step;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import starter.pageObjects.IremitU;
 
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class IremitUSteps {
-    private static final Logger log = LoggerFactory.getLogger(IremitUSteps.class);
     IremitU iremitu;
 
     @Step
@@ -42,14 +38,5 @@ public class IremitUSteps {
     public void SendMoney(int enteramount, String country, String paymentType, String SelfOrOnbehalf,
                           String BenificiaryName, String Paymenttype, String PurposeofRemittance, String Sourceoffunds, String Remarks, String UsernameInput, String PasswordInput) throws InterruptedException {
         iremitu.SendMoney(enteramount, country, paymentType, SelfOrOnbehalf, BenificiaryName, Paymenttype, PurposeofRemittance, Sourceoffunds, Remarks, UsernameInput, PasswordInput);
-    }
-
-    @Step
-    public void verifyHomePage() {
-
-    }
-
-    @Step
-    public void userLogOfApplication() {
     }
 }

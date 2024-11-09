@@ -207,13 +207,11 @@ public class IremitU extends PageObject {
         if (usertype.equals("Bus")) {
             $(userTypeField).click();
         }
-
         $(emailField).sendKeys(email);
         $(arrow).click();
         $(passwordField).sendKeys(pass);
         $(signInBtn).click();
     }
-
     public void OtpEntering() throws InterruptedException {
         WebDriver driver = getDriver();
         ((JavascriptExecutor) driver).executeScript("window.open()");
