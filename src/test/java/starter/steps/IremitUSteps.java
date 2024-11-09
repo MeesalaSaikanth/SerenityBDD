@@ -31,9 +31,10 @@ public class IremitUSteps {
                 Relation, Phonenumber, benificiaryemail, address);
     }
     @Step
-    public void SendMoney(int enterAmount, String country, String paymentType, String SelfOrOnbehalf)throws InterruptedException{
-        iremitu.SendMoney (enterAmount, country, paymentType, SelfOrOnbehalf);
+    public void SendMoney(int enteramount, String country, String paymentType, String SelfOrOnbehalf, String BenificiaryName, String Paymenttype, String PurposeofRemittance, String Sourceoffunds, String Remarks, String UsernameInput, String PasswordInput) throws InterruptedException {
+        iremitu.SendMoney(enteramount, country, paymentType, SelfOrOnbehalf, BenificiaryName, Paymenttype, PurposeofRemittance, Sourceoffunds, Remarks, UsernameInput, PasswordInput);
     }
+
     @Step
     public void verifyHomePage() {
 

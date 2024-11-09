@@ -30,12 +30,10 @@ public class IremitUStepDef {
     public void add_benificiary(String SelfOrBuss, String BankName, String Branchcode, String Accountnumber, String FirstName, String LastName, String Relation, String PhoneNumber, String Email, String Address) {
     IremitUSteps.Add_Benificiary(SelfOrBuss, BankName, Branchcode, Accountnumber, FirstName, LastName, Relation, PhoneNumber, Email, Address);
     }
-    @Then("SendMoney {string}, {string}, {string}, {string}")
-    public void sendMoney(String enterAmount, String country, String paymentType, String SelfOrOnbehalf) throws InterruptedException{
-        int amount = Integer.parseInt(enterAmount);// Convert from String to int
-        IremitUSteps.SendMoney(amount, country, paymentType, SelfOrOnbehalf);
+    @And("SendMoney {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
+    public void sendMoney(String enteramount, String country, String paymentType, String SelfOrOnbehalf, String BenificiaryName, String Paymenttype, String PurposeofRemittance, String Sourceoffunds, String Remarks, String UsernameInput, String PasswordInput) throws InterruptedException {
+    // Convert the entered amount to an integer
+        int amount = Integer.parseInt(enteramount);
+    IremitUSteps.SendMoney(amount, country, paymentType, SelfOrOnbehalf, BenificiaryName, Paymenttype, PurposeofRemittance, Sourceoffunds, Remarks, UsernameInput, PasswordInput);
     }
-
-
-
 }
