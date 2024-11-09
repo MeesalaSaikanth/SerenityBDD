@@ -100,11 +100,49 @@ public class IremitU extends PageObject {
         $(ConfirmOTP).click();
         Thread.sleep(2000);
     }
-    @FindBy(xpath = "//a[@href='/beneficiarysummary' and contains(@class, 'v-btn--outlined') and .//span[text()='view More']]")
-    public WebElementFacade BeneficiaryClick;
+    @FindBy(xpath = "//li[@class='nav-sub-links' and contains(., 'Send Money')]")
+    public WebElementFacade SendMoneyTab;
 
-//    @FindBy(xpath = "//li[contains(@class, 'nav-sub-links') and contains(@class, 'primary--text') and contains(text(), 'Beneficiary')]")
-//    public WebElementFacade BeneficiaryClick;
+    @FindBy(xpath = "//li[@class='nav-sub-links' and contains(., 'Beneficiary')]")
+    public WebElementFacade BeneficiaryTab;
+
+    @FindBy(xpath = "//li[@class='nav-sub-links' and contains(., 'Transaction Summary')]")
+    public WebElementFacade TransactionSummaryTab;
+
+    @FindBy(xpath = "//li[@class='nav-sub-links' and contains(., 'Home')]")
+    public WebElementFacade HomeTab;
+
+    @FindBy(xpath = "//i[contains(@class, 'v-icon') and contains(@class, 'mdi-power')]")
+    public WebElementFacade LogOutButton;
+
+    @FindBy(xpath = "//button[contains(@class, 'v-btn') and contains(@class, 'primary') and contains(@class, 'lighten-3')]")
+    public WebElementFacade LogOutButtonConfirm;
+
+    @FindBy(xpath = "//button[contains(@class, 'v-btn') and contains(@class, 'error')]")
+    public WebElementFacade LogOutButtonCancel;
+
+    public void OpenAllTabs()throws InterruptedException {
+        $(SendMoneyTab).click();
+        Thread.sleep(1000);
+        $(BeneficiaryTab).click();
+        Thread.sleep(1000);
+        $(TransactionSummaryTab).click();
+        Thread.sleep(1000);
+        $(HomeTab).click();
+        Thread.sleep(1000);
+    }
+    public void LogOutorLogOutCancel(String LogOutorNot)throws InterruptedException{
+        $(LogOutButton).click();
+        Thread.sleep(1000);
+        if(LogOutorNot.equals("yes")){
+            $(LogOutButtonConfirm).click();
+        }else {
+            $(LogOutButtonCancel).click();
+            Thread.sleep(1000);
+        }
+    }
+    @FindBy(xpath = "//li[@class='nav-sub-links' and contains(., 'Beneficiary')]")
+    public WebElementFacade BeneficiaryClick;
 
     @FindBy(xpath = "//button[@type='button' and contains(@class, 'v-btn--has-bg') and .//span[text()=' Add Beneficiary ']]")
     public WebElementFacade AddBeneficiary;

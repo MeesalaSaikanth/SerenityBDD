@@ -25,13 +25,22 @@ public class IremitUSteps {
         iremitu.OtpEntering();
     }
     @Step
+    public void OpenAllTabs()throws InterruptedException{
+        iremitu.OpenAllTabs();
+    }
+    @Step
+    public void LogOutorLogOutCancel(String LogOutorNot)throws InterruptedException{
+        iremitu.LogOutorLogOutCancel(LogOutorNot);
+    }
+    @Step
     public void Add_Benificiary(String SelfOrBuss, String BankName, String Branchcode, String Accountnumber, String Firstname, String Lastname, String Relation, String Phonenumber,
                                 String benificiaryemail, String address) {
         iremitu.Add_Benificiary(SelfOrBuss, BankName, Branchcode, Accountnumber, Firstname, Lastname,
                 Relation, Phonenumber, benificiaryemail, address);
     }
     @Step
-    public void SendMoney(int enteramount, String country, String paymentType, String SelfOrOnbehalf, String BenificiaryName, String Paymenttype, String PurposeofRemittance, String Sourceoffunds, String Remarks, String UsernameInput, String PasswordInput) throws InterruptedException {
+    public void SendMoney(int enteramount, String country, String paymentType, String SelfOrOnbehalf,
+                          String BenificiaryName, String Paymenttype, String PurposeofRemittance, String Sourceoffunds, String Remarks, String UsernameInput, String PasswordInput) throws InterruptedException {
         iremitu.SendMoney(enteramount, country, paymentType, SelfOrOnbehalf, BenificiaryName, Paymenttype, PurposeofRemittance, Sourceoffunds, Remarks, UsernameInput, PasswordInput);
     }
 

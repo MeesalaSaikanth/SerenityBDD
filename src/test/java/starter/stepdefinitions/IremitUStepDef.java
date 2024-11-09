@@ -26,6 +26,14 @@ public class IremitUStepDef {
     public void OtpEntering()throws InterruptedException{
         IremitUSteps.OtpEntering();
     }
+    @Then("OpenAllTabs")
+    public void OpenAllTabs()throws InterruptedException{
+        IremitUSteps.OpenAllTabs();
+    }
+    @Then("LogOutorLogOutCancel {string}")
+    public void LogOutorLogOutCancel(String LogOutorNot)throws InterruptedException{
+        IremitUSteps.LogOutorLogOutCancel(LogOutorNot);
+    }
     @Then("Add_Benificiary {string}, {string}, {string}, {string}, {string}, Last Name {string}, Relation {string}, Phone number {string}, {string}, and Address {string}")
     public void add_benificiary(String SelfOrBuss, String BankName, String Branchcode, String Accountnumber, String FirstName, String LastName, String Relation, String PhoneNumber, String Email, String Address) {
     IremitUSteps.Add_Benificiary(SelfOrBuss, BankName, Branchcode, Accountnumber, FirstName, LastName, Relation, PhoneNumber, Email, Address);
